@@ -1,3 +1,36 @@
-h1 {
-  color: #444;
+@charset 'utf-8';
+
+.advonps-survey {
+  @import 'variables';
+
+  background-color: initial;
+  border-radius: initial;
+  color: $font-base-color;
+  font-size: $font-size-body;
+  font-weight: normal;
+  line-height: 1.42857143;
+  margin: initial;
+  padding: initial;
+  width: initial;
+
+  * {
+    background-color: initial;
+    border-radius: initial;
+    box-sizing: border-box;
+    direction: ltr !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    margin: initial;
+    padding: initial;
+    width: initial;
+  }
+
+  @import 'base';
+  @import 'button';
+  @import 'rating-form';
+  @import 'bar';
+  @import 'feedback';
+  @import 'powered-by';
 }
+
+@import 'animations';
+@import 'rtl';

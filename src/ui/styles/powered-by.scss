@@ -1,0 +1,9 @@
+.powered-by {
+  font-size: 12px;
+  margin-top: $size-md;
+
+  > a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

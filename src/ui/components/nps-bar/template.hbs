@@ -1,0 +1,20 @@
+<div class='nps-bar'
+     style="background-color: {{color-config 'background'}};
+            color: {{color-config 'foreground'}};
+            border-top: 1px solid {{color-config 'border'}};">
+  <div class="nps-bar--close" onclick={{action @close}}>
+    ×
+  </div>
+
+  <div class="nps-survey--wrapper">
+    {{#if initialRating}}
+      <rating-form @submit={{action submitRating}} />
+    {{else if leavingFeedback}}
+      <feedback-form @rating={{rating}} @submit={{action submitFeedback}} />
+    {{else if completedForm}}
+      <thank-you />
+    {{/if}}
+  </div>
+
+  <powered-by />
+</div>

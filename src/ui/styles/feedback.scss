@@ -1,0 +1,40 @@
+.nps-feedback {
+  text-align: left;
+
+  &--submit {
+    float: right;
+  }
+
+  &--question {
+    margin: $size-md 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--textarea {
+    border: $border-base;
+    border-radius: $border-radius;
+    display: block;
+    font-size: $font-size-body;
+    margin-bottom: $size-md;
+    outline: none;
+    padding: $size-sm;
+    resize: none;
+    width: 100%;
+    zoom: 1;
+  }
+
+  &--label {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0 auto $size-sm;
+  }
+}

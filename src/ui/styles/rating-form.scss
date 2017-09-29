@@ -1,0 +1,44 @@
+.rating-form {
+  display: inline-block;
+  margin-top: 14px;
+
+  &-select {
+    margin-bottom: $size-xs;
+    text-align: center;
+  }
+
+  &--button {
+    @extend %nps-button;
+
+    &-inner {
+      @extend %nps-button--inner;
+      height: $size-touchpoint;
+
+      line-height: $size-touchpoint;
+      width: $size-touchpoint;
+    }
+  }
+
+  &-hint {
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  &--unlikely {
+    float: left;
+    padding-right: $size-sm;
+  }
+
+  &--likely {
+    float: right;
+    padding-left: $size-sm;
+  }
+}
+
+@media (max-width: 600px) {
+  .rating-form--button-inner {
+    height: ($size-touchpoint / 2);
+    line-height: ($size-touchpoint / 2);
+    width: ($size-touchpoint / 2);
+  }
+}

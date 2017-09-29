@@ -1,0 +1,32 @@
+// .nps-fade {
+//   opacity: 1;
+//   transition: opacity 500ms;
+// }
+
+// .nps-fade--enter,
+// .nps-fade--leave {
+//   .nps-bar,
+//   .nps-dialog,
+//   .nps-panel {
+//     opacity: 0;
+//   }
+// }
+
+.nps-slide--enter,
+.nps-slide--leave {
+  .nps-bar {
+    bottom: -600px !important;
+  }
+}
+
+// .nps-next {
+//   transition: height 500ms;
+// }
+
+// .nps-next > div {
+//   transition: top 500ms;
+// }
+
+// .nps-next > div > div {
+//   transition: opacity 500ms;
+// }

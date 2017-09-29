@@ -1,0 +1,41 @@
+%nps-button {
+  background-color: $c-background-button;
+  border: $border-width $c-border-button solid;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 0 0 $c-background-button, 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  color: $c-color-button;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+%nps-button--inner {
+  color: $c-color-button;
+  display: block;
+  font-size: $font-size-smaller;
+  font-weight: bold;
+  height: $button-height;
+  line-height: $button-height;
+  text-decoration: none;
+}
+
+.nps-submit--button {
+  @extend %nps-button;
+
+  margin-bottom: $size-xs; //shadow size
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &-inner {
+    @extend %nps-button--inner;
+
+    padding: 0 $size-sm;
+  }
+}

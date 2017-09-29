@@ -1,0 +1,26 @@
+<div class="nps-title nps-center">{{howLikely}}</div>
+
+<div class="rating-form">
+  <div class="rating-form-select">
+    {{#each options key="@index" as |option|}}
+      <div class="rating-form--button"
+           style="box-shadow: 0 5px 0 0 {{color-config 'border-button'}}, 0 1px 1px 0 rgba(0, 0, 0, 0.1);"
+           onclick={{action @submit option}}>
+        <div class="rating-form--button-inner"
+          style="background-color: {{color-config 'primary'}};
+                 color: {{color-config 'background'}};">
+          {{option}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="nps-cf">
+    <div class="rating-form-hint rating-form--unlikely" style="color: {{color-config 'foreground-light'}}">
+      {{lowLegend}}
+    </div>
+    <div class="rating-form-hint rating-form--likely" style="color: {{color-config 'foreground-light'}}">
+      {{highLegend}}</div>
+  </div>
+</div>
+

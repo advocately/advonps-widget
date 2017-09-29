@@ -1,0 +1,49 @@
+.nps-bar {
+  bottom: 0;
+  left: 0;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 0 $size-md;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  transition: bottom 500ms;
+  z-index: 2147483647;
+
+  .powered-by {
+    bottom: $size-sm;
+    position: absolute;
+    right: $size-md;
+  }
+
+  .nps-survey--wrapper {
+    margin: $size-md auto;
+    max-width: 600px;
+  }
+
+  .nps-title {
+    font-size: $font-size-smaller;
+  }
+
+  &--close {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 20px;
+    height: $size-touchpoint;
+    line-height: $size-xs;
+    padding-right: 15px;
+    padding-top: $size-md;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    user-select: none;
+    width: $size-touchpoint;
+  }
+}
+
+@media (max-width: 900px) {
+  .nps-bar .powered-by {
+    display: none;
+  }
+}

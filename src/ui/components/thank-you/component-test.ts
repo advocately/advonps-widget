@@ -3,11 +3,11 @@ import hbs from '@glimmer/inline-precompile';
 
 const { module, test } = QUnit;
 
-module('Component: advonps-widget', function(hooks) {
+module('Component: thank-you', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await this.render(hbs`<advonps-widget />`);
-    assert.ok(this.containerElement.querySelector('div.advonps-survey'));
+    await this.render(hbs`<thank-you />`);
+    assert.ok(this.containerElement.querySelector('div.nps-thanks'));
   });
 });
