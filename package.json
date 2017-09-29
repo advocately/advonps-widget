@@ -1,7 +1,7 @@
 {
   "name": "advonps-widget",
-  "version": "0.0.0",
-  "description": "A brand new Glimmer app.",
+  "version": "1.0.0",
+  "description": "In-app NPS form",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -45,6 +45,5 @@
   },
   "engines": {
     "node": ">= 4.0"
-  },
-  "private": true
+  }
 }
