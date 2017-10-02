@@ -8,16 +8,16 @@ export default class FeedbackForm extends Component {
   get labelText() {
     let rating = this.args.rating;
     if (rating > 8) {
-      return i18n('follow_up.promoter');
+      return i18n(['follow_up.promoter']);
     } else if (rating > 6) {
-      return i18n('follow_up.passive');
+      return i18n(['follow_up.passive']);
     } else {
-      return i18n('follow_up.detractor');
+      return i18n(['follow_up.detractor']);
     };
   }
 
   get submitText() {
-    return i18n('submit');
+    return i18n(['submit']);
   }
 
   updateFeedback(e) {

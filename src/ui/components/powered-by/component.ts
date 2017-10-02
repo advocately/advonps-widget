@@ -4,7 +4,7 @@ import npsConfig from '../nps-config/helper';
 
 export default class PoweredBy extends Component {
   get text() {
-    return i18n('powered_by');
+    return i18n(['powered_by']);
   }
 
   get hidePoweredBy() {

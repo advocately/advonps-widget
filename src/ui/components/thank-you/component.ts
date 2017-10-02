@@ -7,11 +7,11 @@ export default class ThankYou extends Component {
   @tracked('rating')
   get thankYou() {
     if (this.rating > 8) {
-      return i18n('promoter.thanksMessage');
+      return i18n(['promoter.thanksMessage']);
     } else if (this.rating > 6) {
-      return i18n('passive.thanksMessage');
+      return i18n(['passive.thanksMessage']);
     } else {
-      return i18n('detractor.thanksMessage');
+      return i18n(['detractor.thanksMessage']);
     }
   }
 };

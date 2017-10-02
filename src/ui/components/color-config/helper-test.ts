@@ -12,6 +12,6 @@ module('Helper: color-config', function(hooks) {
   });
 
   test('it makes custom colors', function(assert) {
-    assert.equal(colorConfig(['shadow']), '#474747');
+    assert.equal(colorConfig(['borderButton']), '#aedac0');
   });
 });

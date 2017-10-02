@@ -1,13 +1,22 @@
 import defaults from '../../../utils/messages';
 
-export default function i18nT(key) {
+export default function i18nT(params) {
+  let key: string = params[0];
+
+  if (!key) {
+    return;
+  }
+
   let overrides = {};
   let language = defaults['en'];
 
   if (window.advocately && window.advocately.surveyConfig) {
     let config = window.advocately.surveyConfig.config;
     overrides = config.language;
-    language = defaults[config.locale];
+
+    if (config.locale) {
+      language = defaults[config.locale];
+    }
   }
 
   return nestedGet(overrides, key) || nestedGet(language, key);
