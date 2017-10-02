@@ -3,7 +3,7 @@ import Component, { tracked } from '@glimmer/component';
 export default class NpsBar extends Component {
   @tracked rating: number = undefined;
   @tracked feedback: string = undefined;
-  states = ['rating', 'feedback', 'completed'];
+  @tracked forceComplete: boolean = false;
 
   @tracked('currentState')
   get initialRating() {
@@ -15,14 +15,14 @@ export default class NpsBar extends Component {
     return 'feedback' === this.currentState;
   }
 
-  @tracked('currentState')
+  @tracked('currentState', 'forceComplete')
   get completedForm() {
     return 'completed' === this.currentState;
   }
 
-  @tracked('rating', 'feedback')
+  @tracked('rating', 'feedback', 'forceComplete')
   get currentState() {
-    if (this.rating && this.feedback) {
+    if (this.rating && this.feedback || this.forceComplete) {
       return 'completed';
     } else if (this.rating) {
       return 'feedback';
@@ -50,6 +50,10 @@ export default class NpsBar extends Component {
         console.log(this.feedback);
       }
     }
+    this.forceComplete = true;
+    setTimeout(() => {
+      this.args.close();
+    }, 2000);
   }
 };
 
