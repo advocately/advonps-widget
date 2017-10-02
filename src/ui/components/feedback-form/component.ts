@@ -16,10 +16,6 @@ export default class FeedbackForm extends Component {
     };
   }
 
-  get submitText() {
-    return i18n(['submit']);
-  }
-
   updateFeedback(e) {
     this.feedback = e.target.value;
   }
