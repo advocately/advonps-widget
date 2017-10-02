@@ -7,8 +7,7 @@
            style="box-shadow: 0 5px 0 0 {{color-config 'borderButton'}}, 0 1px 1px 0 rgba(0, 0, 0, 0.1);"
            onclick={{action @submit option}}>
         <div class="rating-form--button-inner"
-          style="background-color: {{color-config 'primaryColor'}};
-                 color: {{color-config 'backgroundColor'}};">
+          style="background-color: {{color-config 'primaryColor'}};color: {{color-config 'textColor'}};">
           {{option}}
         </div>
       </div>
@@ -16,10 +15,10 @@
   </div>
 
   <div class="nps-cf">
-    <div class="rating-form-hint rating-form--unlikely" style="color: {{color-config 'foregroundLight'}}">
+    <div class="rating-form-hint rating-form--unlikely" style="color: {{color-config 'textColor'}}">
       {{lowLegend}}
     </div>
-    <div class="rating-form-hint rating-form--likely" style="color: {{color-config 'foregroundLight'}}">
+    <div class="rating-form-hint rating-form--likely" style="color: {{color-config 'textColor'}}">
       {{highLegend}}</div>
   </div>
 </div>

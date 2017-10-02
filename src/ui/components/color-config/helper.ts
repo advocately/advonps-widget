@@ -1,41 +1,30 @@
-import colorMixer from 'color';
-const ColorMixer = colorMixer;
-import npsConfig from '../nps-config/helper';
+import cfg from '../nps-config/helper';
 
 function mixColors(type: string) {
-  if (npsConfig(type)) {
-    return npsConfig(type);
+  if (cfg(type)) {
+    return cfg(type);
   }
 
-  if (type === 'foregroundLight') {
-    return ColorMixer(npsConfig('textColor'))
-      .mix(ColorMixer(npsConfig('backgroundColor')), 0.6)
-      .hex();
-  }
-  if (type === 'shadow') {
-    return ColorMixer(npsConfig('textColor'))
-      .mix(ColorMixer(npsConfig('backgroundColor')), 0.1)
-      .hex();
-  }
-  if (type === 'border') {
-    return ColorMixer(npsConfig('textColor'))
-      .mix(ColorMixer(npsConfig('backgroundColor')), 0.15)
-      .hex();
-  }
   if (type === 'borderButton') {
-    return ColorMixer(npsConfig('primaryColor'))
-      .mix(ColorMixer(npsConfig('backgroundColor')), 0.6)
-      .hex();
+    return blendColors(cfg('primaryColor'), cfg('backgroundColor'), 0.6);
   }
 };
 
+function blendColors(c0, c1, p) {
+  var f = parseInt(c0.slice(1), 16),
+    t = parseInt(c1.slice(1), 16),
+    R1 = f >> 16,
+    G1 = f >> 8 & 0x00FF,
+    B1 = f & 0x0000FF,
+    R2 = t >> 16,
+    G2 = t >> 8 & 0x00FF,
+    B2 = t & 0x0000FF;
+  return "#" + (0x1000000 + (Math.round((R2 - R1) * p) + R1) * 0x10000 + (Math.round((G2 - G1) * p) + G1) * 0x100 + (Math.round((B2 - B1) * p) + B1))
+    .toString(16)
+    .slice(1);
+}
+
 export default function colorConfig(params) {
   let type: string = params[0];
-  let mixedColor = mixColors(type);
-
-  if (mixedColor && npsConfig(mixedColor)) {
-    return npsConfig(mixedColor);
-  }
-
-  return mixedColor;
+  return mixColors(type);
 };

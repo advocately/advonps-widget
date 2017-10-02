@@ -3,13 +3,14 @@ $gray-2: #e2e6e8;
 $gray-3: #333;
 $gray-6: #2d3033;
 
-$c-border-base: $gray-2;
+$text-muted: $gray-2;
+$c-border-base: $text-muted;
 
 $border-base: 1px $c-border-base solid;
 
 $c-border-button: #a4aeb3;
 $c-background-button: #f4f4f5;
-$c-color-button: $gray-6;
+$c-color-button: #fdfdfd;
 
 $font-base-color: $gray-3;
 

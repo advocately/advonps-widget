@@ -1,6 +1,6 @@
 const defaultConfig: any = {
   backgroundColor: '#fdfdfd',
-  textColor: '#333',
+  textColor: '#fdfdfd',
   primaryColor: '#38a564'
 };
 
