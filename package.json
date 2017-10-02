@@ -12,7 +12,8 @@
     "test": "ember test",
     "lint-eslint": "eslint --ext .js, src",
     "lint-stylelint": "stylelint src/ui/styles/*.scss --fix",
-    "lint": "npm run -s lint-eslint && npm run -s lint-stylelint"
+    "lint": "npm run -s lint-eslint && npm run -s lint-stylelint",
+    "track-test": "npm run -s build -prod && cp dist/app-*.js ../advolytics/demo-app/advonps.js && cp dist/app-*.css ../advolytics/demo-app/advonps.css"
   },
   "devDependencies": {
     "@glimmer/application": "^0.7.2",
