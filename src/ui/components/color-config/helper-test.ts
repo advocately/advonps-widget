@@ -8,7 +8,7 @@ module('Helper: color-config', function(hooks) {
   });
 
   test('it finds existing colors', function(assert) {
-    assert.equal(colorConfig(['primary']), '#38a564');
+    assert.equal(colorConfig(['primaryColor']), '#38a564');
   });
 
   test('it makes custom colors', function(assert) {

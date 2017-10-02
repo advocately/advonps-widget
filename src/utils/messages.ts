@@ -33,4 +33,5 @@ const i18n: any = {
     powered_by: 'Powered by',
   }
 }
- export default i18n;
+
+export default i18n;
