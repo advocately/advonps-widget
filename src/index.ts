@@ -14,6 +14,10 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('advonps-widget', containerElement, null);
-
-app.boot();
+if (window.advocately) {
+  app.renderComponent('advonps-widget', document.body, null);
+  app.boot();
+} else {
+  app.renderComponent('advonps-widget', containerElement, null);
+  app.boot();
+}
