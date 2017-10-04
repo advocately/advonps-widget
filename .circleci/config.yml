@@ -1,52 +1,94 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
-
-dependencies:
-  pre:
-    - sudo apt-get install libxss1 libappindicator1 libindicator7
-    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - wget -O firefox.tar.bz2 https://download.mozilla.org/?product=firefox-latest&os=linux&lang=en-US
-    - sudo dpkg -i ./google-chrome*.deb
-    - sudo dpkg -i ./firefox.tar.bz2
-    - sudo apt-get install -f
+version: 2.0
 
 jobs:
-  build:
+  checkout_code:
     docker:
-      # specify the version you desire here
       - image: circleci/node:7.10-browsers
         environment:
           CHROME_BIN: "/usr/bin/google-chrome"
-          FIREFOX_BIN: "/usr/bin/firefox"
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
+      - run:
+          name: save SHA to a file
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - save_cache:
+          key: v1-repo-{{ checksum ".circle-sha" }}
+          paths:
+            - ~/repo
 
-      # Download and cache dependencies
+  build:
+    docker:
+      - image: circleci/node:7.10-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: save SHA to a file
+          command: echo $CIRCLE_SHA1 > .circle-sha
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: npm run build
-
+            - v1-repo-{{ checksum ".circle-sha" }}
+      - restore_cache:
+          keys:
+            - v1-npm-{{ checksum "package.json" }}
+      - restore_cache:
+          key: v1-assets-{{ checksum ".circle-sha" }}
+      - run: npm install
       - save_cache:
+          key: v1-npm-{{ checksum "package.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/repo/node_modules
+      - run:
+          name: Setup browser testing
+          command: |
+            sudo apt-get install libxss1 libappindicator1 libindicator7
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i ./google-chrome*.deb
+            sudo apt-get install -f
+      - run:
+          name: Build app
+          command: npm run build
+      - run:
+          name: Run tests
+          command: npm run test
+      - save_cache:
+          key: v1-assets-{{ checksum ".circle-sha" }}
+          paths:
+            - ~/repo/dist
 
-      # run tests!
-      - run: npm run test
-
-
+  deploy:
+    machine:
+        enabled: true
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: save SHA to a file
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - restore_cache:
+          keys:
+            - v1-repo-{{ checksum ".circle-sha" }}
+      - restore_cache:
+          keys:
+            - v1-npm-{{ checksum "package.json" }}
+      - restore_cache:
+          keys:
+            - v1-assets-{{ checksum ".circle-sha" }}
+      - run:
+          name: Install aws cli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy
+          command: aws s3 sync ~/repo/dist s3://advonps-prod
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - checkout_code
+      - build:
+          requires:
+            - checkout_code
+      - deploy:
+          requires:
+            - build
