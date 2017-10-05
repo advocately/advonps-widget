@@ -14,6 +14,15 @@ module.exports = function(defaults) {
     },
     autoprefixer: {
       browsers: ['> 1%', 'last 5 versions']
+    },
+    fingerprint: {
+      enabled: false
+    },
+    outputPaths: {
+      app: {
+        js: 'advonps.js',
+        css: 'advonps.css'
+      }
     }
   });
 
