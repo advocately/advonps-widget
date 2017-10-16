@@ -8,10 +8,10 @@ module('Component: powered-by', function(hooks) {
 
   test('it renders', async function(assert) {
     await this.render(hbs`<powered-by />`);
-    let element = this.containerElement.querySelector('div.powered-by');
+    let element = this.containerElement.querySelector('div.advo-powered-by');
     assert.ok(element);
     assert.equal(element.textContent.trim().replace( /[\s\n\r]+/g, ' ' ), "Powered by Advocately");
-    element = this.containerElement.querySelector('div.powered-by a');
+    element = this.containerElement.querySelector('div.advo-powered-by a');
 
     assert.equal(element.href, "https://www.advocate.ly/")
   });

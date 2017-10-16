@@ -1,16 +1,16 @@
-<div class="nps-feedback">
-  <div class="nps-feedback-question">
-    <div class="nps-title nps-left">{{labelText}}</div>
-    <textarea class='nps-feedback--textarea'
+<div class="advonps-feedback">
+  <div class="advonps-feedback-question">
+    <div class="advonps-title advonps-left">{{labelText}}</div>
+    <textarea class='advonps-feedback--textarea'
               value={{feedback}}
               onblur={{action updateFeedback}} />
   </div>
 
   <div style="float: right;">
-    <button class='nps-submit--button'
+    <button class='advonps-submit--button'
             style="box-shadow: 0 5px 0 0 {{color-config 'borderButton'}}, 0 1px 1px 0 rgba(0, 0, 0, 0.1);"
             onclick={{action @submit feedback}}>
-      <div class="nps-submit--button-inner"
+      <div class="advonps-submit--button-inner"
            style="background-color: {{color-config 'primaryColor'}};color: {{color-config 'textColor'}};">
         {{i18n-t 'submit'}}
       </div>

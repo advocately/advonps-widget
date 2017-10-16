@@ -1,4 +1,4 @@
-%nps-button {
+%advonps-button {
   background-color: $c-background-button;
   border: $border-width $c-border-button solid;
   border-radius: $border-radius;
@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-%nps-button--inner {
+%advonps-button--inner {
   color: $c-color-button;
   display: block;
   font-size: $font-size-smaller;
@@ -19,8 +19,8 @@
   text-decoration: none;
 }
 
-.nps-submit--button {
-  @extend %nps-button;
+.advonps-submit--button {
+  @extend %advonps-button;
 
   margin-bottom: $size-xs; //shadow size
 
@@ -34,7 +34,7 @@
   }
 
   &-inner {
-    @extend %nps-button--inner;
+    @extend %advonps-button--inner;
 
     padding: 0 $size-sm;
   }

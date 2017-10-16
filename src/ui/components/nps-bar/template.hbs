@@ -1,9 +1,9 @@
-<div class='nps-bar'>
-  <div class="nps-bar--close" onclick={{action @close}}>
+<div class='advonps-bar'>
+  <div class="advonps-bar--close" onclick={{action @close}}>
     ×
   </div>
 
-  <div class="nps-survey--wrapper">
+  <div class="advonps-survey--wrapper">
     {{#if initialRating}}
       <rating-form @submit={{action submitRating}} />
     {{else if leavingFeedback}}

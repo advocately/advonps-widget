@@ -1,32 +1,32 @@
-// .nps-fade {
+// .advonps-fade {
 //   opacity: 1;
 //   transition: opacity 500ms;
 // }
 
-// .nps-fade--enter,
-// .nps-fade--leave {
-//   .nps-bar,
-//   .nps-dialog,
-//   .nps-panel {
+// .advonps-fade--enter,
+// .advonps-fade--leave {
+//   .advonps-bar,
+//   .advonps-dialog,
+//   .advonps-panel {
 //     opacity: 0;
 //   }
 // }
 
-.nps-slide--enter,
-.nps-slide--leave {
-  .nps-bar {
+.advonps-slide--enter,
+.advonps-slide--leave {
+  .advonps-bar {
     bottom: -600px !important;
   }
 }
 
-// .nps-next {
+// .advonps-next {
 //   transition: height 500ms;
 // }
 
-// .nps-next > div {
+// .advonps-next > div {
 //   transition: top 500ms;
 // }
 
-// .nps-next > div > div {
+// .advonps-next > div > div {
 //   transition: opacity 500ms;
 // }

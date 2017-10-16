@@ -15,6 +15,6 @@ module('Component: nps-bar', function(hooks) {
     // };
 
     // await this.render(hbs`<nps-bar close={{action hideSurvey}} />`);
-    // assert.ok(this.containerElement.querySelector('div.nps-bar'));
+    // assert.ok(this.containerElement.querySelector('div.advonps-bar'));
   });
 });

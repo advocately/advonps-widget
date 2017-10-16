@@ -15,7 +15,7 @@ module('Component: feedback-form', function(hooks) {
 
     // await this.render(hbs`<feedback-form rating=10 submit={{submit}} />`);
 
-    // assert.ok(this.containerElement.querySelector('div.nps-feedback'));
+    // assert.ok(this.containerElement.querySelector('div.advonps-feedback'));
     // assert.ok(this.containerElement.querySelector('textarea'));
 
   });

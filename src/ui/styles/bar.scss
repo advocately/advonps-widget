@@ -1,4 +1,4 @@
-.nps-bar {
+.advonps-bar {
   border-top: 1px solid #ccc;
   bottom: 0;
   left: 0;
@@ -11,18 +11,18 @@
   transition: bottom 800ms;
   z-index: 2147483647;
 
-  .powered-by {
+  .advo-powered-by {
     bottom: $size-sm;
     position: absolute;
     right: $size-md;
   }
 
-  .nps-survey--wrapper {
+  .advonps-survey--wrapper {
     margin: $size-md auto;
     max-width: 600px;
   }
 
-  .nps-title {
+  .advonps-title {
     font-size: $font-size-smaller;
   }
 
@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 900px) {
-  .nps-bar .powered-by {
+  .advonps-bar .advo-powered-by {
     display: none;
   }
 }

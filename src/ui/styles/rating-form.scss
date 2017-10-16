@@ -1,4 +1,4 @@
-.rating-form {
+.advo-rating-form {
   display: inline-block;
   margin-top: 14px;
 
@@ -8,10 +8,10 @@
   }
 
   &--button {
-    @extend %nps-button;
+    @extend %advonps-button;
 
     &-inner {
-      @extend %nps-button--inner;
+      @extend %advonps-button--inner;
       height: $size-touchpoint;
 
       line-height: $size-touchpoint;
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 600px) {
-  .rating-form--button-inner {
+  .advo-rating-form--button-inner {
     height: ($size-touchpoint / 2);
     line-height: ($size-touchpoint / 2);
     width: ($size-touchpoint / 2);

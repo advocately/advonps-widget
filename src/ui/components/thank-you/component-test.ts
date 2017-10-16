@@ -8,6 +8,6 @@ module('Component: thank-you', function(hooks) {
 
   test('it renders', async function(assert) {
     await this.render(hbs`<thank-you />`);
-    assert.ok(this.containerElement.querySelector('div.nps-thanks'));
+    assert.ok(this.containerElement.querySelector('div.advonps-thanks'));
   });
 });
