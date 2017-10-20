@@ -22,9 +22,11 @@ export default class NpsBar extends Component {
 
   @tracked('rating', 'feedback', 'forceComplete')
   get currentState() {
-    if (this.rating && this.feedback || this.forceComplete) {
+    let rated = this.rating || this.rating === 0;
+
+    if (rated && this.feedback || this.forceComplete) {
       return 'completed';
-    } else if (this.rating) {
+    } else if (rated) {
       return 'feedback';
     } else {
       return 'rating';
