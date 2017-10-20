@@ -1,6 +1,6 @@
 {
   "name": "advonps-widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "In-app NPS form from Advocately.",
   "directories": {
     "doc": "doc",
