@@ -1,11 +1,25 @@
 {
   "name": "advonps-widget",
   "version": "1.0.0",
-  "description": "In-app NPS form",
+  "description": "In-app NPS form from Advocately.",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/advocately/advonps-widget"
+  },
+  "keywords": [
+    "in-app",
+    "in-app NPS",
+    "NPS®",
+    "advocately",
+    "customer success",
+    "net promoter score"
+  ],
+  "author": "Advocately <team@advocate.ly>",
+  "license": "MIT",
   "scripts": {
     "build": "ember build -e production",
     "start": "ember server",
