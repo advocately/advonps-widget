@@ -1,5 +1,5 @@
 .advonps-bar {
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid #ccc;
   bottom: 0;
   left: 0;
@@ -28,7 +28,6 @@
   }
 
   &--close {
-    color: $text-muted;
     cursor: pointer;
     font-size: 20px;
     height: $size-touchpoint;
