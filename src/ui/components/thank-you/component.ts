@@ -4,7 +4,6 @@ import i18n from '../i18n-t/helper';
 export default class ThankYou extends Component {
   @tracked rating = 10;
 
-  @tracked('rating')
   get thankYou() {
     if (this.rating > 8) {
       return i18n(['promoter.thanksMessage']);

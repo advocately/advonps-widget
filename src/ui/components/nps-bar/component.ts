@@ -5,22 +5,18 @@ export default class NpsBar extends Component {
   @tracked feedback: string = undefined;
   @tracked forceComplete: boolean = false;
 
-  @tracked('currentState')
   get initialRating() {
     return 'rating' === this.currentState;
   }
 
-  @tracked('currentState')
   get leavingFeedback() {
     return 'feedback' === this.currentState;
   }
 
-  @tracked('currentState', 'forceComplete')
   get completedForm() {
     return 'completed' === this.currentState;
   }
 
-  @tracked('rating', 'feedback', 'forceComplete')
   get currentState() {
     let rated = this.rating || this.rating === 0;
 

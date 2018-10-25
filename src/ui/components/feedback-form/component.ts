@@ -4,7 +4,6 @@ import i18n from '../i18n-t/helper';
 export default class FeedbackForm extends Component {
   @tracked feedback: 'string' = undefined;
 
-  @tracked('args')
   get labelText() {
     let rating = this.args.rating;
     if (rating > 8) {
