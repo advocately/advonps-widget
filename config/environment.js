@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'advonps-widget',
-    environment: environment
+    environment
   };
 
   return ENV;

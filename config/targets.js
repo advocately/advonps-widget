@@ -5,6 +5,7 @@ let browsers = [
 
 if (process.env.EMBER_ENV === 'test') {
   browsers = [
+    '> 2%',
     'last 1 Chrome versions',
     'last 1 Firefox versions'
   ];

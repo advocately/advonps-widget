@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import { setApp, start } from '@glimmer/test-helpers';
 import App from '../../main';
 
