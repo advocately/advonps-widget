@@ -1,4 +1,6 @@
 # advonps-widget
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadvocately%2Fadvonps-widget.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadvocately%2Fadvonps-widget?ref=badge_shield)
+
 
 This README outlines the details of collaborating on this Glimmer application.
 A short introduction of this app could easily go here.
@@ -32,3 +34,7 @@ You will need the following things properly installed on your computer.
 
 * [glimmerjs](http://github.com/tildeio/glimmer/)
 * [ember-cli](https://ember-cli.com/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadvocately%2Fadvonps-widget.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadvocately%2Fadvonps-widget?ref=badge_large)
