@@ -13,7 +13,7 @@ module.exports = function(defaults) {
       ]
     },
     autoprefixer: {
-      browsers: ['> 1%', 'last 5 versions']
+      browsers: ['> 1%', 'last 5 versions', 'IE 11']
     },
     fingerprint: {
       enabled: false

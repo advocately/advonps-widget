@@ -1,6 +1,7 @@
 let browsers = [
   '> 1%',
   'last 5 versions',
+  'IE 11',
 ];
 
 if (process.env.EMBER_ENV === 'test') {
